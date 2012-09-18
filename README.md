@@ -6,4 +6,8 @@ A basic production app.
 TODO:
 
 - rails new app
-- stuff
+- stuff:
+  + welcoming page
+  + full models implementation
+  + controllers
+  + testing (Capybara with RSpec?)
