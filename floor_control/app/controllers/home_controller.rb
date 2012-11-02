@@ -3,4 +3,17 @@ class HomeController < ApplicationController
 
   def index
   end
+
+  def materialsZone
+    @mats = Material.all
+  end
+
+  def productionOrdersZone
+    @prodOrd = ProductionOrder.all
+  end
+
+  def usersZone
+    @usrs = User.all
+  end
+
 end

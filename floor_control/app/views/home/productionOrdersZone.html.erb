@@ -1,0 +1,12 @@
+<h1> Production orders </h1>
+
+<p> For admin purposes </p>
+
+<% @prodOrd.each do |order| %>
+  <p> Order </p>
+  <p> <%= order.id %></p>
+  <p> Details </p>
+  <% (order.materials).each do |material| %>
+     <%= material.name %><br />
+  <% end %>
+<% end %>

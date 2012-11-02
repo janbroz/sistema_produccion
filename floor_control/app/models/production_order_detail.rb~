@@ -1,0 +1,2 @@
+class ProductionOrderDetail < ActiveRecord::Base
+end

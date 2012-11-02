@@ -4,6 +4,13 @@
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
+
+  <div id="links">
+    <%= link_to 'Users', users_path %>
+    <%= link_to 'Materials', materialz_path %>
+    <%= link_to 'Production Orders', productionOrders_path %>
+  </div>
+
   <div id="login_info">
     <% if user_signed_in? %>
     <p>Hello <%= current_user.email %></p>

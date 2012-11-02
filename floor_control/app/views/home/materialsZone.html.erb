@@ -1,0 +1,11 @@
+<h1> Materials, for administrative use only </h1>
+
+<p> Here should be a full list of the materials in the app </p>
+
+<br />
+<h2> Materials </h2>
+<% @mats.each do |material| %>
+  <p> <%= material.reference %> </p>
+<% end %>
+
+<%= link_to 'Nuevo', "materials/new" %>

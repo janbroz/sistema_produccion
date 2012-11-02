@@ -1,7 +1,22 @@
 FloorControl::Application.routes.draw do
+  get "production_order_details/new"
+
+  get "materials/show"
+
+  get "materials/new"
+  get "productionOrders/new"
+
   devise_for :users
 
   get "home/index"
+  match "materialz" => "home#materialsZone"
+  match "productionOrders" => "home#productionOrdersZone"
+  match "users" => "home#usersZone"
+
+  resources :materials
+  resources :production_order_details
+  resources :production_orders
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

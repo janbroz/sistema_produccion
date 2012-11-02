@@ -1,0 +1,4 @@
+class ProductionOrderDetailsController < ApplicationController
+  def new
+  end
+end

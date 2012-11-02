@@ -11,7 +11,46 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121101151127) do
+ActiveRecord::Schema.define(:version => 20121102142650) do
+
+  create_table "clients", :force => true do |t|
+    t.string   "nit"
+    t.string   "corporate_name"
+    t.string   "telephone"
+    t.string   "direction"
+    t.integer  "user_cedula"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  create_table "materials", :force => true do |t|
+    t.string   "reference"
+    t.string   "name"
+    t.integer  "caliber"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "production_order_details", :force => true do |t|
+    t.integer  "production_order_id"
+    t.integer  "material_id"
+    t.integer  "quantity"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+  end
+
+  create_table "production_orders", :force => true do |t|
+    t.date     "initial_date"
+    t.date     "delivery_date"
+    t.string   "description"
+    t.string   "client_id"
+    t.string   "buy_order_from_client"
+    t.string   "order_reference"
+    t.integer  "user_id"
+    t.string   "observations"
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -27,6 +66,9 @@ ActiveRecord::Schema.define(:version => 20121101151127) do
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
     t.integer  "role"
+    t.integer  "cedula"
+    t.string   "nombre"
+    t.integer  "tipo"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
