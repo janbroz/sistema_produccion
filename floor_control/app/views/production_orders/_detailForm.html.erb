@@ -13,12 +13,11 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :production_order_id %><br />
-    <%= f.number_field :production_order_id %>
+    <%= f.hidden_field :production_order_id %>
   </div>
   <div class="field">
     <%= f.label :material_id %><br />
-    <%= collection_select(:material_id, :material_id, Material.all, :id, :name, :prompt => true) %>
+    <%= collection_select(:production_order_detail, :material_id, Material.all, :id, :name, :prompt => true) %>
   </div>
   <div class="field">
     <%= f.label :quantity %><br />

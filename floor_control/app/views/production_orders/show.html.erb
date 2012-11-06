@@ -4,7 +4,7 @@
 
 <% @pod.each do |detail| %>
 <p> --------------DETAIL--------------</p>
-<p>Material reference: <%= detail.material_id %></p>
+<p>Material reference: <%= detail.material.reference %></p>
 <p>Material quantity: <%= detail.quantity %></p>
 <p> ----------------------------------------</p>
 <% end %>

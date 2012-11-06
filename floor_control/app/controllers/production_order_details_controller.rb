@@ -17,7 +17,8 @@ class ProductionOrderDetailsController < ApplicationController
         format.html { redirect_to @production_order_detail.production_order, notice: 'Success' }
         format.json { render json: @production_order_detail, status: :created, location: @production_order_detail }
       else
-        format.html { render action: "new" }
+#        format.html { render action: "new" }
+        format.html { redirect_to ProductionOrder.find(@production_order_detail.production_order_id), :alert => "error while creating a new detail" }
         format.json { render json: @production_order_details.errors, status: :unproccessable_entity }
       end
     end

@@ -1,0 +1,54 @@
+
+
+-- Models for the application.
+
+<From the document CI Processes>
+
+* Stage
+All stages inherit from it.
+    - order_id :: int
+    - start_date :: date
+    - end_date :: date
+    - description :: text
+
+** Slittin_Stage
+   - roll_characteristics :: int
+   - open :: bool
+   - slice :: bool
+   - <descolillar> :: bool
+   - rewind :: bool
+   - microperforate :: bool
+   - roll_max_diameter :: float
+   - planned_lineal_meters :: float
+
+** Printing_Stage
+   - technical_card_id :: int
+   - planned_lineal_meters :: float
+   - assembly_time :: float
+
+** Bending_Stage
+   - flap_width :: float
+   - us_seal_distance :: float
+   - assembly_time :: int
+
+** Folding_Stage
+   - folding_distance :: float
+   - assembly_time :: int
+
+** Cutting_Stage
+   - cut :: bool
+   - seal :: bool
+   - v_precut :: bool
+   - h_precut :: bool
+   - curved_seal :: bool
+   - die :: string
+
+* Dispatches
+- invoice_number :: int
+- dispatch_order :: int
+- person_in_charge :: string
+- transporter :: string
+- packages :: int
+- units_per_package :: int
+
+

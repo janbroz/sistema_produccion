@@ -16,7 +16,7 @@
 
   <div class="field">
     <%= f.label :client_id %><br />
-    <%= collection_select(:client_id, :client_id, Client.all, :id, :corporate_name, :prompt => true) %>
+    <%= collection_select(:production_order, :client_id, Client.all, :id, :corporate_name, :prompt => true) %>
   </div>
 
   <div class="field">
