@@ -1,2 +1,12 @@
-<h1>ProductionOrders#show</h1>
+<h1>Production Order Details</h1>
+
+<p>Referencia: <%= @production_order.order_reference %></p>
+
+<% @pod.each do |detail| %>
+<p> --------------DETAIL--------------</p>
+<p>Material reference: <%= detail.material_id %></p>
+<p>Material quantity: <%= detail.quantity %></p>
+<p> ----------------------------------------</p>
+<% end %>
+
 <%= render 'detailForm' %>

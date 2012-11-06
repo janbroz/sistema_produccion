@@ -2,7 +2,7 @@ class ProductionOrdersController < ApplicationController
 
   def new
     @production_order = ProductionOrder.new
-
+    @clients = Client.all
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @production_order }
@@ -11,7 +11,9 @@ class ProductionOrdersController < ApplicationController
 
   def show
     @production_order = ProductionOrder.find(params[:id])
+    @pod = @production_order.production_order_details
     @production_order_detail = ProductionOrderDetail.new
+    @production_order_detail.production_order_id = @production_order.id
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @production_order }
@@ -30,6 +32,5 @@ class ProductionOrdersController < ApplicationController
       end
     end
   end
-
 
 end

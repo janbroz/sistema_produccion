@@ -14,7 +14,7 @@ class ProductionOrderDetailsController < ApplicationController
 
     respond_to do |format|
       if @production_order_detail.save
-        format.html { redirect_to @production_order, notice: 'Success' }
+        format.html { redirect_to @production_order_detail.production_order, notice: 'Success' }
         format.json { render json: @production_order_detail, status: :created, location: @production_order_detail }
       else
         format.html { render action: "new" }
@@ -22,6 +22,5 @@ class ProductionOrderDetailsController < ApplicationController
       end
     end
   end
-
 
 end
