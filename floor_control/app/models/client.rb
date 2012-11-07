@@ -1,6 +1,7 @@
 class Client < ActiveRecord::Base
 
-  validates_uniqueness_of :nit, :message => ", Ya existe un cliente con ese NIT"
+  validates_uniqueness_of :nit , :if => Proc.new { |f|
+      f.user_cedula.blank? }, :message => ", Ya existe un cliente con ese NIT"
   validates :corporate_name, :presence => {:equals => true,
     :message => ", Debe ingresar un nombre para el cliente"}
   validates :telephone, :presence => {:equals => true,

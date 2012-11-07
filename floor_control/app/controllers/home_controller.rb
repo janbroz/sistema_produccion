@@ -2,6 +2,7 @@ class HomeController < ApplicationController
   before_filter :authenticate_user!
 
   def index
+
   end
 
   def materialsZone
@@ -14,6 +15,10 @@ class HomeController < ApplicationController
 
   def usersZone
     @usrs = User.all
+  end
+
+  def clientsZone
+    @clients = Client.all
   end
 
 end

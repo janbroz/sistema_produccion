@@ -1,5 +1,5 @@
 FloorControl::Application.routes.draw do
-  get "clients/index"
+
 
   get "clients/show"
 
@@ -18,7 +18,7 @@ FloorControl::Application.routes.draw do
   match "materialz" => "home#materialsZone"
   match "productionOrders" => "home#productionOrdersZone"
   match "users" => "home#usersZone"
-  match "clients" => "clients#index"
+  match "clientz" => "home#clientsZone"
 
   resources :materials
   resources :production_order_details
