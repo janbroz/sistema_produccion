@@ -12,6 +12,12 @@ class ProductionOrderDetailsController < ApplicationController
   def create
     @production_order_detail = ProductionOrderDetail.new(params[:production_order_detail])
 
+    # This is some ugly 'machete', search for cool way to do it
+    @production_order = @production_order_detail.production_order
+    @production_order.state = "modified"
+    @production_order.save
+    # End of the ugly 'machete'
+
     respond_to do |format|
       if @production_order_detail.save
         format.html { redirect_to @production_order_detail.production_order, notice: 'Success' }

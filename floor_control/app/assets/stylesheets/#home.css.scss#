@@ -13,13 +13,9 @@ html{
 
 .table, th, td{
   border: 1px solid black;
-
+  white-space: nowrap;
 }
 
 .table{
-
-}
-
-.prodInfo{
-  margin-left: 20px;
+  max-width: 200px;
 }
