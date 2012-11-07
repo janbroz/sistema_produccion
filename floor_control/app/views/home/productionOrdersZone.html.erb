@@ -3,13 +3,25 @@
 <p> For admin purposes </p>
 
 <% @prodOrd.each do |order| %>
-  <p> Order </p>
-  <p> <%= order.id %></p>
+  <p> Order #:  <%= link_to order.id, order %></p>
   <p> Details </p>
-  <% (order.materials).each do |material| %>
-     <%= material.name %><br />
-  <% end %>
-<% end %>
 
+<% if !order.materials.empty? %>
+<div class="table">
+<table>
+  <tr>
+    <th> Nombre </th>
+    <th> Referencia </th>
+  </tr>
+  <% (order.materials).each do |material| %>
+  <tr>
+    <td><%= material.name %></td>
+    <td><%= material.reference %></td>
+  </tr>
+  <% end %>
+</table>
+</div>
+<% end %>
+<% end %>
 
 <%= link_to 'Nueva orden', "production_orders/new" %>

@@ -1,0 +1,15 @@
+<h1>Listado de clientes</h1>
+
+<% @clients.each do |client| %>
+  <% if client.user_cedula %>
+    <p>Cedula: <%= client.user_cedula %></p>
+  <% else %>
+    <p>NIT: <%= client.nit %></p>
+  <% end %>
+<p>Nombre: <%= client.corporate_name %></p>
+<p>Telephone: <%= client.telephone %></p>
+<p>Direction: <%= client.direction %></p>
+<% end %>
+
+
+<%= link_to 'Nuevo Cliente', new_client_path %>
