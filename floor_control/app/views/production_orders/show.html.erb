@@ -1,12 +1,38 @@
 <h1>Production Order Details</h1>
 
-<p>Referencia: <%= @production_order.order_reference %></p>
+<h2> Estado: <%= @production_order.state %></h2>
+<p> Referencia: <%= @production_order.order_reference %></p>
 
-<% @pod.each do |detail| %>
-<p> --------------DETAIL--------------</p>
-<p>Material reference: <%= detail.material.reference %></p>
-<p>Material quantity: <%= detail.quantity %></p>
-<p> ----------------------------------------</p>
+
+<% if !@production_order.production_order_details.empty? %>
+<table>
+  <tr>
+    <th> Referencia </th>
+    <th> Cantidad </th>
+    <th> Descripcion </th>
+  </tr>
+  <% @pod.each do |detail| %>
+  <tr>
+    <td><%= detail.material.reference %></td>
+    <td><%= detail.quantity %></td>
+    <td> Here goes the material description </td>
+  </tr>
+  <% end %>
+</table>
 <% end %>
 
-<%= render 'detailForm' %>
+<% unless @production_order.state == "confirmed" %>
+<div id="prodDet">
+  <%= render 'detailForm' %>
+</div>
+
+<%= form_for @production_order do |t| %>
+  <%= t.hidden_field :state, :value=>"confirmed" %>
+  <%= t.submit "Confirm" %>
+<% end %>
+
+<% end %>
+
+<br />
+
+

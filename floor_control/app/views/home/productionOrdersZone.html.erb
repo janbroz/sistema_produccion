@@ -4,24 +4,31 @@
 
 <% @prodOrd.each do |order| %>
   <p> Order #:  <%= link_to order.id, order %></p>
+  <div class="prodInfo">
+
+
+  <% if !order.materials.empty? %>
   <p> Details </p>
-
-<% if !order.materials.empty? %>
-<div class="table">
-<table>
-  <tr>
-    <th> Nombre </th>
-    <th> Referencia </th>
-  </tr>
-  <% (order.materials).each do |material| %>
-  <tr>
-    <td><%= material.name %></td>
-    <td><%= material.reference %></td>
-  </tr>
+  <div class="tabletop">
+    <table>
+      <tr>
+        <th> Nombre </th>
+        <th> Referencia </th>
+      </tr>
+      <% (order.materials).each do |material| %>
+      <tr>
+        <td><%= material.name %></td>
+        <td><%= material.reference %></td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+  <% else %>
+  <p> No details </p>
   <% end %>
-</table>
-</div>
+  </div>
 <% end %>
-<% end %>
-
+<br />
 <%= link_to 'Nueva orden', "production_orders/new" %>
+
+
