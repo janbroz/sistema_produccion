@@ -10,14 +10,18 @@
     </div>
   <% end %>
 
-  <div class="field_a">
+  <div class="field">
     <%= f.label :nit %><br />
+    <div id="field_a">
     <%= f.text_field :nit %>
+    </div>
   </div>
 
-  <div class="field_c">
+  <div class="field">
     <%= f.label :user_cedula %><br />
+    <div id="field_c">
     <%= f.text_field :user_cedula %>
+    </div>
   </div>
 
   <div class="field">

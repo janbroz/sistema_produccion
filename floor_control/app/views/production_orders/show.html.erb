@@ -26,6 +26,7 @@
   <%= render 'detailForm' %>
 </div>
 
+<br />
 <%= form_for @production_order do |t| %>
   <%= t.hidden_field :state, :value=>"confirmed" %>
   <%= t.submit "Confirm" %>

@@ -4,8 +4,19 @@
 
 <br />
 <h2> Materials </h2>
-<% @mats.each do |material| %>
-  <p> <%= material.reference %> </p>
-<% end %>
 
+<table>
+  <tr>
+    <th> Nombre </th>
+    <th> Referencia </th>
+  </tr>
+  <% @mats.each do |material| %>
+  <tr>
+    <td><%= link_to material.name, material %></td>
+    <td><%= material.reference %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
 <%= link_to 'Nuevo', "materials/new" %>

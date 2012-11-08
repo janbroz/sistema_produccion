@@ -14,4 +14,3 @@ $ ->
 
 
 
-# document.getElementById('field').style.display = 'none;"

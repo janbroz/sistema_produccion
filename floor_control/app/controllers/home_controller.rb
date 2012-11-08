@@ -6,7 +6,7 @@ class HomeController < ApplicationController
   end
 
   def materialsZone
-    @mats = Material.all
+    @mats = Material.find(:all, :order => "LOWER(reference)")
   end
 
   def productionOrdersZone
@@ -18,7 +18,7 @@ class HomeController < ApplicationController
   end
 
   def clientsZone
-    @clients = Client.all
+    @clients = Client.find(:all, :order => "LOWER(corporate_name)")
   end
 
 end
