@@ -1,0 +1,2 @@
+class Sellado < ActiveRecord::Base
+end

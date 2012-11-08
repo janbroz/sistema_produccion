@@ -24,6 +24,8 @@ FloorControl::Application.routes.draw do
   resources :production_order_details
   resources :production_orders
   resources :clients
+  resources :procesos
+  resources :plegados
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

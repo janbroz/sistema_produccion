@@ -1,0 +1,2 @@
+class Plegado < ActiveRecord::Base
+end

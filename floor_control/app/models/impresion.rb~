@@ -1,0 +1,2 @@
+class Impresion < ActiveRecord::Base
+end
