@@ -3,7 +3,6 @@
 <h2> Estado: <%= @production_order.state %></h2>
 <p> Referencia: <%= @production_order.order_reference %></p>
 
-
 <% if !@production_order.production_order_details.empty? %>
 <table>
   <tr>
@@ -45,6 +44,11 @@
   <br />
   <%= t.hidden_field :production_order_id, :value => @production_order.id %>
 
-
   <%= t.submit "Nuevo Proceso" %>
 <% end %>
+
+<br />
+
+<%= render 'checkBox' %>
+
+

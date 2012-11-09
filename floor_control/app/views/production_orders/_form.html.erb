@@ -1,4 +1,3 @@
-
 <%= form_for(@production_order) do |f| %>
   <% if @production_order.errors.any? %>
     <div id="error_explanation">
@@ -11,8 +10,6 @@
       </ul>
     </div>
   <% end %>
-
-
 
   <div class="field">
     <%= f.label :client_id %><br />

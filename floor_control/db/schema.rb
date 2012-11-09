@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121108164537) do
+ActiveRecord::Schema.define(:version => 20121109150024) do
 
   create_table "clients", :force => true do |t|
     t.string   "nit"
@@ -45,6 +45,19 @@ ActiveRecord::Schema.define(:version => 20121108164537) do
     t.integer  "tiempo_montaje"
     t.datetime "created_at",              :null => false
     t.datetime "updated_at",              :null => false
+  end
+
+  create_table "lotes", :force => true do |t|
+    t.integer  "proceso_id"
+    t.integer  "numero_lote"
+    t.string   "lote"
+    t.float    "peso"
+    t.integer  "metros_lineales"
+    t.date     "fecha"
+    t.float    "duracion_turno"
+    t.integer  "user_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
   create_table "materials", :force => true do |t|

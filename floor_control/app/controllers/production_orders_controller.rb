@@ -14,7 +14,7 @@ class ProductionOrdersController < ApplicationController
     @pod = @production_order.production_order_details
     @production_order_detail = ProductionOrderDetail.new
     @production_order_detail.production_order_id = @production_order.id
-
+    @bla = Proceso.new
     # Here comes the pain!
     @plegado = Plegado.new
 

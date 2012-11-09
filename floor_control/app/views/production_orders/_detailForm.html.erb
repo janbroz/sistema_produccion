@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :material_id %><br />
-    <%= collection_select(:production_order_detail, :material_id, Material.all, :id, :name, :prompt => true) %>
+    <%= collection_select(:production_order_detail, :material_id, Material.all, :id, :reference, :prompt => true) %>
   </div>
   <div class="field">
     <%= f.label :quantity %><br />
