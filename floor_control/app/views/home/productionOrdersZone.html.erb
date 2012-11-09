@@ -3,12 +3,12 @@
 <p> For admin purposes </p>
 
 <% @prodOrd.each do |order| %>
-  <p> Order #:  <%= link_to order.id, order %></p>
+  <h2> Orden #:  <%= link_to order.id, order %></h2>
+  <h3> Detalles </h3>
   <div class="prodInfo">
 
 
   <% if !order.materials.empty? %>
-  <p> Details </p>
   <div class="tabletop">
     <table>
       <tr>
@@ -27,8 +27,17 @@
   <p> No details </p>
   <% end %>
   </div>
+
+  <h3> Procesos asociados a la orden de produccion:</h3>
+  <br />
+  <% order.procesos.each do |pr| %>
+  <div class="process_descr">
+    <p> <b>Proceso:</b> <%= pr.numero_proceso %></p>
+    <p> <b>Observaciones:</b> <%= pr.observaciones %></p>
+  </div>
+  <br />
+  <% end %>
+
 <% end %>
 <br />
 <%= link_to 'Nueva orden', "production_orders/new" %>
-
-

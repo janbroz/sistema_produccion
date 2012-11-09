@@ -1,0 +1,2 @@
+class Doblado < ActiveRecord::Base
+end

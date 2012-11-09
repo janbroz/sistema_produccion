@@ -1,0 +1,2 @@
+class Refilado < ActiveRecord::Base
+end

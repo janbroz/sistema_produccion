@@ -3,7 +3,6 @@
 <h2> Estado: <%= @production_order.state %></h2>
 <p> Referencia: <%= @production_order.order_reference %></p>
 
-
 <% if !@production_order.production_order_details.empty? %>
 <table>
   <tr>
@@ -35,5 +34,21 @@
 <% end %>
 
 <br />
+
+<%= form_for @plegado do |t| %>
+  <%= t.label :distancia_plegado %>
+  <%= t.text_field :distancia_plegado %>
+  <br />
+  <%= t.label :tiempo_montaje %>
+  <%= t.text_field :tiempo_montaje %>
+  <br />
+  <%= t.hidden_field :production_order_id, :value => @production_order.id %>
+
+  <%= t.submit "Nuevo Proceso" %>
+<% end %>
+
+<br />
+
+<%= render 'checkBox' %>
 
 
