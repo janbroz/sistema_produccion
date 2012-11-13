@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121109150024) do
+ActiveRecord::Schema.define(:version => 20121109193621) do
 
   create_table "clients", :force => true do |t|
     t.string   "nit"
@@ -87,6 +87,15 @@ ActiveRecord::Schema.define(:version => 20121109150024) do
     t.integer  "heir_id"
     t.string   "heir_type"
     t.integer  "production_order_id"
+  end
+
+  create_table "process_creation_orders", :force => true do |t|
+    t.string   "p_name"
+    t.boolean  "p_create"
+    t.integer  "p_order"
+    t.integer  "production_order_id"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
   end
 
   create_table "production_order_details", :force => true do |t|

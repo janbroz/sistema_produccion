@@ -35,20 +35,49 @@
 
 <br />
 
-<%= form_for @plegado do |t| %>
-  <%= t.label :distancia_plegado %>
-  <%= t.text_field :distancia_plegado %>
-  <br />
-  <%= t.label :tiempo_montaje %>
-  <%= t.text_field :tiempo_montaje %>
-  <br />
-  <%= t.hidden_field :production_order_id, :value => @production_order.id %>
 
-  <%= t.submit "Nuevo Proceso" %>
+
+<% @pco.each do |pr| %>
+  <%= pr.p_name %>
+  <%= pr.p_order %>
+  <%= pr.p_create %><br />
 <% end %>
 
-<br />
+  <h3> Procesos asociados a la orden de produccion:</h3>
+  <br />
+  <% @production_order.procesos.each do |pr| %>
+  <div class="process_descr">
+    <p> <b>Proceso:</b> <%= pr.numero_proceso %></p>
+    <p> <b>Observaciones:</b> <%= pr.observaciones %></p>
 
-<%= render 'checkBox' %>
+    <% pr.lotes.each do |lote| %>
+    <div class="lote_descr">
+      <p> <b>Lote:</b> <%= lote.numero_lote %></p>
+      <p> <b>Peso:</b> <%= lote.peso %></p>
+      <p> <b>Mts. Lin: </b> <%= lote.metros_lineales %></p>
+      <p> <b>Operario Asignado: </b> <%= User.find(lote.user_id).nombre %></p> <!--  Ugly as hell -->
+    </div>
+    <br />
+    <% end %>
+
+  </div>
+  <br />
+  <% end %>
+
+<!-- <%= form_for @plegado do |t| %> -->
+<!--   <%= t.label :distancia_plegado %> -->
+<!--   <%= t.text_field :distancia_plegado %> -->
+<!--   <br /> -->
+<!--   <%= t.label :tiempo_montaje %> -->
+<!--   <%= t.text_field :tiempo_montaje %> -->
+<!--   <br /> -->
+<!--   <%= t.hidden_field :production_order_id, :value => @production_order.id %> -->
+
+<!--   <%= t.submit "Nuevo Proceso" %> -->
+<!-- <% end %> -->
+
+<!-- <br /> -->
+
+<!-- <%= render 'checkBox' %> -->
 
 
