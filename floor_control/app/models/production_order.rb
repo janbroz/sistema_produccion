@@ -2,8 +2,8 @@ class ProductionOrder < ActiveRecord::Base
 
   has_many :production_order_details, :dependent => :destroy
   has_many :materials, :through => :production_order_details
-
   has_many :procesos
+  has_many :process_creation_orders
 
   # Yo-ho-ho, and a bottle of rum!
   validates :client_id, :presence => {:equals => true,

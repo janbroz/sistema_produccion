@@ -17,6 +17,18 @@ class ProductionOrdersController < ApplicationController
     @bla = Proceso.new
     # Here comes the pain!
     @plegado = Plegado.new
+    # It should not be done here, we are doing a lot of work each time
+    # someone refresh the page, move it to new asap!
+    if @production_order.process_creation_orders.empty?
+      ["PISTA", "REFILADO", "DOBLADO", "PLEGADO", "SELLADO", "CORTE", "IMPRESION"].each do |lt|
+        @pcol = ProcessCreationOrder.new
+        @pcol.p_name = lt
+        @pcol.p_create = false
+        @pcol.production_order_id = @production_order.id
+        @pcol.save
+      end
+    end
+    @pco = @production_order.process_creation_orders
 
     # Here it ends
     respond_to do |format|
