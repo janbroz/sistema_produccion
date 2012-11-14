@@ -1,0 +1,4 @@
+class SelladosController < ApplicationController
+  def show
+  end
+end

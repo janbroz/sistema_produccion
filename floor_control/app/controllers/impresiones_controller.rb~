@@ -1,0 +1,4 @@
+class ImpresionesController < ApplicationController
+  def show
+  end
+end

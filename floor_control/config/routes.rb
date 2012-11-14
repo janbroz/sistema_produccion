@@ -1,6 +1,18 @@
 FloorControl::Application.routes.draw do
 
 
+  get "refilados/show"
+
+  get "impresiones/show"
+
+  get "doblados/show"
+
+  get "plegados/show"
+
+  get "cortes/show"
+
+  get "sellados/show"
+
   get "clients/show"
 
   get "clients/new"
@@ -20,13 +32,10 @@ FloorControl::Application.routes.draw do
   match "users" => "home#usersZone"
   match "clientz" => "home#clientsZone"
 
-  resources :materials
-  resources :production_order_details
-  resources :production_orders
-  resources :clients
-  resources :procesos
-  resources :plegados
-  resources :lotes
+  resources :materials, :production_order_details, :production_orders, :clients
+  resources :procesos, :sellados, :cortes, :plegados, :doblados, :impresiones
+  resources :refilados, :lotes, :pistas
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

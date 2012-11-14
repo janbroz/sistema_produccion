@@ -1,0 +1,2 @@
+module SelladosHelper
+end

@@ -1,0 +1,4 @@
+class CortesController < ApplicationController
+  def show
+  end
+end
