@@ -1,6 +1,8 @@
 FloorControl::Application.routes.draw do
 
 
+  get "process_creation_orders/show"
+
   get "refilados/show"
 
   get "impresiones/show"

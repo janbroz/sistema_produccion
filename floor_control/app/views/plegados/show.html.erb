@@ -1,2 +1,9 @@
-<h1>Plegados#show</h1>
-<p>Find me in app/views/plegados/show.html.erb</p>
+<h1>Descripcion del proceso</h1>
+
+
+<p> Orden de produccion: <%= @plegado.production_order_id %></p>
+<p> Numero de proceso: <%= @plegado.numero_proceso %></p>
+<p> Ancho del rollo: <%= @plegado.ancho_rollo %> centimetros</p>
+<p> Cantidad: <%= @plegado.cantidad %> rollos</p>
+<p> Distancia de plegado: <%= @plegado.distancia_plegado %> metros</p><p>
+<p> Tiempo de montaje: <%= @plegado.tiempo_montaje %> horas</p>
